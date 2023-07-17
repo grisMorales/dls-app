@@ -11,7 +11,11 @@ import SwiftUI
 struct dls_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // SignInView is SwiftUI
+            SignInView()
+            // RegisterView is in UIKit
+//            RegisterView()
+            .environment(\.theme, appTheme)
         }
     }
 }
