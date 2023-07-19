@@ -13,6 +13,7 @@ private struct ColorModifier: ViewModifier {
     @Environment(\.theme) var theme
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.colorSchemeContrast) var colorContrast
+   // @Environment(\.marca) var marca
     
     private var isDark: Bool {
         return colorScheme == .dark
@@ -29,7 +30,7 @@ private struct ColorModifier: ViewModifier {
     
     let style: ColorStyle
     let placement: Placement
-    
+  
     @ViewBuilder
     func body(content: Content) -> some View {
         switch placement {
@@ -87,7 +88,7 @@ extension View {
     func adaptiveBackgroundColor(_ style: ColorStyle) -> some View {
         self.modifier(ColorModifier(style: style, placement: .background))
     }
-    
+
   /*  func adaptiveFont(_ style: FontStyle) -> some View {
         self.modifier(FontModifier(style: style))
     }*/
